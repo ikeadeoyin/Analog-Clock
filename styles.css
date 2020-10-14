@@ -1,0 +1,120 @@
+*{
+    margin: o;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+    font-size: 1.5rem;
+}
+.clock{
+    /* background-color: rgb(4, 28, 49); */
+    height:300px;
+    width: 300px;
+    border-radius: 50%;
+    background-color: rgba(233, 45, 1, 0.2);
+/* background: #d991d7; */
+position: relative;
+border: 2px solid pink;
+}
+.clock .number{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform:rotate(var(--rot))
+}
+.clock .number1{
+    --rot:30deg;
+}
+.clock .number2{
+    --rot:60deg;
+}
+.clock .number3{
+    --rot:90deg;
+}
+.clock .number4{
+    --rot:120deg;
+}
+.clock .number5{
+    --rot:150deg;
+}
+.clock .number6{
+    --rot:180deg;
+}
+.clock .number7{
+    --rot:210deg;
+}
+.clock .number8{
+    --rot:240deg;
+}
+.clock .number9{
+    --rot:270deg;
+}
+.clock .number10{
+    --rot:300deg;
+}
+.clock .number11{
+    --rot:330deg;
+}
+
+.clock::after{
+    position: absolute;
+    content: "";
+    display: block;
+    height: 5%;
+    width: 5%;
+    border-radius: 50%;
+    background-color: silver;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 4;
+}
+.hand{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.hour{
+    z-index: 1;
+}
+.minute{
+    z-index: 2;
+}
+.second{
+    z-index: 3;
+}
+.second::before,
+.minute::before,
+.hour::before{
+    position: absolute;
+    content: "";
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+
+}
+.second::before{
+    width: 0.5%;
+    height: 42%;
+    background-color: black;
+}
+.minute::before{
+    width: 1%;
+    height: 32%;
+    background-color:rgb(158, 157, 157);
+}
+.hour::before{
+    width: 1.5%;
+    height: 25%;
+    background-color: red;
+}
